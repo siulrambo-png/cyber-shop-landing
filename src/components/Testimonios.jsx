@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import image3 from '../assets/image_3.png' // Hacker Anonymous en estudio
+import image3 from '../assets/image_3.jpg' // Hacker Anonymous en estudio
 
 const staggerContainer = {
   hidden: {},

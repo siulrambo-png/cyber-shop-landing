@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import image0 from '../assets/image_0.png' // Hacker con máscara y mapa verde
 import image1 from '../assets/image_1.png' // Hacker en traje y mapa azul
-import image2 from '../assets/image_2.png' // Ojo y código
-import image4 from '../assets/image_4.png' // Taza de café y teclado
+import image2 from '../assets/image_2.jpg' // Ojo y código
+import image4 from '../assets/image_4.jpg' // Taza de café y teclado
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
