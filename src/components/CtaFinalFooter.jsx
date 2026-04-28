@@ -19,7 +19,7 @@ export default function CtaFinalFooter() {
             {/* Texto y Formulario */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp}>
                 <span className="font-body font-semibold text-[0.65rem] tracking-[0.25em] uppercase mb-6 relative z-10 inline-block text-accent">Acceso Exclusivo</span>
-                <h2 className="font-heading text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.90] text-gradient-silver max-w-xl mx-auto md:mx-0 font-bold tracking-[-0.03em]">
+                <h2 className="font-heading text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.90] max-w-xl mx-auto md:mx-0 font-bold tracking-[-0.03em]" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {headingLines.map((line, i) => (
                         <span key={i} className="block">{line}</span>
                     ))}

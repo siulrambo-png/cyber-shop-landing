@@ -34,7 +34,7 @@ export default function FeaturesGrid() {
         <div className="max-w-6xl mx-auto px-6">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerItem} className="text-center mb-20 max-w-3xl mx-auto">
                 <span className="bg-foreground text-background rounded-full px-3 py-1 text-xs font-semibold mb-4 inline-block">Capacidades dex</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-bold text-gradient-silver leading-[0.94] tracking-[-0.02em]">Blindaje Digital Avanzado</h2>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold leading-[0.94] tracking-[-0.02em]" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Blindaje Digital Avanzado</h2>
                 <p className="font-body font-light text-sm md:text-base text-foreground/50 leading-[1.72] mt-6 max-w-xl mx-auto">Nuestras características de vanguardia ofrecen protección proactiva, visibilidad integral y control total sobre tu infraestructura de datos crítica.</p>
             </motion.div>
         

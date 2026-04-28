@@ -28,7 +28,7 @@ export default function ComoFunciona() {
             {/* Header y Lista - Lado Izquierdo */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} className="max-w-lg mx-auto text-center md:text-left">
                 <span className="bg-foreground text-background rounded-full px-3 py-1 text-xs font-semibold mb-4 inline-block">El Proceso dex</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-bold text-gradient-silver leading-[0.94] tracking-[-0.02em]">Vigilancia en Tiempo Real, Defensa Global</h2>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold leading-[0.94] tracking-[-0.02em]" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Vigilancia en Tiempo Real, Defensa Global</h2>
                 <p className="font-body font-light text-sm md:text-base text-foreground/50 leading-[1.72] mt-6 mb-10 max-w-lg mx-auto">Nuestro enfoque integral de extremo a extremo combina la potencia del neón con la inteligencia de IA avanzado para blindar tu infraestructura contra amenazas invisibles, garantizando la integridad de tus datos críticos.</p>
                 <div className="space-y-3 text-left">
                     {stepsList.map((step, i) => (
