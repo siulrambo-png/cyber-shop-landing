@@ -10,10 +10,10 @@
 }
 
 :root {
-  /* MODO DARK */
-  --background: 0 0% 0%; /* Negro absoluto */
+  /* MODO DARK — Paleta Intensa */
+  --background: 0 0% 0%; /* Negro absoluto #000000 */
   --foreground: 0 0% 100%;
-  --card: 0 0% 4%; /* Fondo oscuro para tarjetas */
+  --card: 0 0% 3%; /* Fondo sutil para tarjetas */
   --card-foreground: 0 0% 100%;
   --primary: 0 0% 100%;
   --primary-foreground: 0 0% 0%;
@@ -21,16 +21,16 @@
   --secondary-foreground: 0 0% 100%;
   --muted: 0 0% 4%;
   --muted-foreground: 0 0% 100% / 0.60;
-  --accent: 262 83% 58%; /* Púrpura neón - Acento Principal (Candados) */
+  --accent: 271 91% 65%; /* Púrpura Neón Vibrante #A855F7 */
   --accent-foreground: 0 0% 100%;
-  --accent-2: 187 85% 53%; /* Cian neón - Acento Secundario (Mapa/Código) */
-  --border: 0 0% 100% / 0.12;
-  --input: 0 0% 100% / 0.10;
-  --ring: 262 83% 58% / 0.40;
+  --accent-2: 188 85% 53%; /* Cian Neón Vibrante #22D3EE */
+  --border: 0 0% 100% / 0.10;
+  --input: 0 0% 100% / 0.08;
+  --ring: 271 91% 65% / 0.50;
   --radius: 9999px;
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-blur: 16px;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 20px;
 }
 
 @layer base {
@@ -44,36 +44,58 @@
 }
 
 @layer components {
-  /* Liquid Glass CSS - DARK MODO ESTRICTO */
+  /* Liquid Glass CSS — Efecto real con backdrop-blur visible */
   .liquid-glass {
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.03);
     background-blend-mode: luminosity;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: none;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.06),
+      0 0 0 0 transparent;
     position: relative;
     overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
   .liquid-glass::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1.4px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.00) 40%, rgba(255, 255, 255, 0.00) 60%, rgba(255, 255, 255, 0.15) 80%, rgba(255, 255, 255, 0.45) 100%);
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.20) 0%,
+      rgba(255, 255, 255, 0.06) 25%,
+      transparent 45%,
+      transparent 55%,
+      rgba(255, 255, 255, 0.06) 75%,
+      rgba(255, 255, 255, 0.20) 100%
+    );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
   }
+
+  /* Hover: borde de neón cian rápido */
+  .liquid-glass:hover {
+    border-color: rgba(34, 211, 238, 0.25);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.06),
+      0 0 20px rgba(34, 211, 238, 0.08);
+  }
+
   .liquid-glass-strong {
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.03);
     background-blend-mode: luminosity;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: none;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(50px) saturate(1.6);
+    -webkit-backdrop-filter: blur(50px) saturate(1.6);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow:
+      4px 4px 12px rgba(0, 0, 0, 0.15),
+      inset 0 1px 1px rgba(255, 255, 255, 0.08);
     position: relative;
     overflow: hidden;
   }
@@ -82,15 +104,48 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1.4px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.20) 20%, rgba(255, 255, 255, 0.00) 40%, rgba(255, 255, 255, 0.00) 60%, rgba(255, 255, 255, 0.20) 80%, rgba(255, 255, 255, 0.50) 100%);
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.08) 25%,
+      transparent 45%,
+      transparent 55%,
+      rgba(255, 255, 255, 0.08) 75%,
+      rgba(255, 255, 255, 0.25) 100%
+    );
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
   }
 
-  /* Animaciones CSS */
+  /* Animación de respiración neón — brillo palpitante */
+  @keyframes neon-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px hsl(271 91% 65% / 0.6))
+             drop-shadow(0 0 20px hsl(271 91% 65% / 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px hsl(271 91% 65% / 0.9))
+             drop-shadow(0 0 40px hsl(271 91% 65% / 0.5))
+             drop-shadow(0 0 60px hsl(271 91% 65% / 0.2));
+    }
+  }
+
+  @keyframes neon-pulse-cyan {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px hsl(188 85% 53% / 0.6))
+             drop-shadow(0 0 20px hsl(188 85% 53% / 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px hsl(188 85% 53% / 0.9))
+             drop-shadow(0 0 40px hsl(188 85% 53% / 0.5))
+             drop-shadow(0 0 60px hsl(188 85% 53% / 0.2));
+    }
+  }
+
+  /* Animación scroll indicator */
   @keyframes scroll-line {
     0% {
       transform: translateY(-100%);
@@ -100,6 +155,18 @@
       transform: translateY(300%);
       opacity: 0;
     }
+  }
+
+  /* Brillo de avatar neón */
+  .neon-ring-purple {
+    box-shadow: 0 0 10px hsl(271 91% 65% / 0.5),
+                0 0 25px hsl(271 91% 65% / 0.3),
+                0 0 45px hsl(271 91% 65% / 0.15);
+  }
+  .neon-ring-cyan {
+    box-shadow: 0 0 10px hsl(188 85% 53% / 0.5),
+                0 0 25px hsl(188 85% 53% / 0.3),
+                0 0 45px hsl(188 85% 53% / 0.15);
   }
 }
 
@@ -122,4 +189,7 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  --animate-scroll-line: scroll-line 1.8s ease-in-out infinite;
+  --animate-neon-pulse: neon-pulse 3s ease-in-out infinite;
+  --animate-neon-pulse-cyan: neon-pulse-cyan 3s ease-in-out infinite;
 }

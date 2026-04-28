@@ -21,18 +21,18 @@ export default function ComoFunciona() {
 
   return (
     <section className="bg-background py-24 md:py-32 relative overflow-hidden">
-        {/* Imágenes proporcionadas como elementos flotantes o de fondo sutil */}
-        <motion.img initial="hidden" whileInView="visible" variants={fadeUp} transition={{ delay: 0.3 }} src={image2} alt="Vigilancia de Neón" className="absolute top-[10%] -left-[5%] w-40 h-40 filter blur-[4px] opacity-[0.05] pointer-events-none" />
-        <motion.img initial="hidden" whileInView="visible" variants={fadeUp} transition={{ delay: 0.6 }} src={image1} alt="Defensa Global" className="absolute top-[50%] -right-[5%] w-40 h-40 filter blur-[4px] opacity-[0.05] pointer-events-none" />
-        <img src={image0} alt="Mapa de Neón" className="absolute -bottom-[20%] -left-[10%] w-[500px] h-[500px] filter blur-[60px] opacity-[0.02] pointer-events-none" />
+        {/* image_1 como fondo de sección — textura "centro de mando" */}
+        <img src={image1} alt="Centro de Mando" className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none" />
+        {/* Gradiente de overlay para profundidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none"></div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] gap-12 md:gap-16 items-center">
             {/* Header y Lista - Lado Izquierdo (Mapeado a image_5.png) */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} className="max-w-lg mx-auto text-center md:text-left">
                 <span className="bg-foreground text-background rounded-full px-3 py-1 text-xs font-semibold mb-3 inline-block">El Proceso dex</span>
                 <h2 className="font-heading text-4xl md:text-5xl italic text-foreground leading-[0.94] tracking-tight">Vigilancia en Tiempo Real, Defensa Global</h2>
-                <p className="font-body font-light text-sm md:text-base text-foreground/58 leading-[1.72] mt-5 mb-10 max-w-lg mx-auto">Nuestro enfoque integral de extremo a extremo combina la potencia del neón con la inteligencia de IA avanzado para blindar tu infraestructura contra amenazas invisibles, garantizando la integridad de tus datos críticos.</p>
-                <div className="space-y-4 text-left">
+                <p className="font-body font-light text-sm md:text-base text-foreground/58 leading-[1.72] mt-5 mb-8 max-w-lg mx-auto">Nuestro enfoque integral de extremo a extremo combina la potencia del neón con la inteligencia de IA avanzado para blindar tu infraestructura contra amenazas invisibles, garantizando la integridad de tus datos críticos.</p>
+                <div className="space-y-2.5 text-left">
                     {stepsList.map((step, i) => (
                         <div key={i} className="flex gap-3 items-center group">
                             {/* Check de neón púrpura recreado */}
@@ -45,16 +45,15 @@ export default function ComoFunciona() {
                 </div>
             </motion.div>
 
-            {/* Elemento visual central (como image_5.png) y imagen integrada */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} transition={{ delay: 0.3 }} className="text-center flex flex-col items-center gap-1">
-                <div className="font-heading text-[clamp(1rem,1.5vw,2rem)] text-accent-2 leading-none uppercase -rotate-90">d e x</div>
-                <div className="relative w-px h-96 bg-accent-2/15 overflow-hidden filter blur-[4px]">
-                    <div className="absolute top-[20%] left-0 w-full h-[60%] rounded-full opacity-[0.2]" style={{ background: 'radial-gradient(ellipse, hsl(var(--accent-2)) 0%, transparent 70%)' }}></div>
-                    <div className="absolute bottom-[20%] left-0 w-full h-[60%] rounded-full opacity-[0.15]" style={{ background: 'radial-gradient(ellipse, hsl(var(--accent-2)) 0%, transparent 70%)' }}></div>
+            {/* Monitor flotante liquid-glass con image_4 (taza/teclado neón) */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} transition={{ delay: 0.3 }} className="text-center flex flex-col items-center gap-4">
+                <div className="font-heading text-[clamp(1rem,1.5vw,2rem)] text-accent-2 leading-none uppercase -rotate-90 animate-neon-pulse-cyan">d e x</div>
+                <div className="relative w-px h-48 bg-accent-2/20 overflow-hidden">
+                    <div className="absolute top-[10%] left-0 w-full h-[80%] rounded-full opacity-[0.35]" style={{ background: 'radial-gradient(ellipse, hsl(var(--accent-2)) 0%, transparent 70%)' }}></div>
                 </div>
-                <div className="relative z-10 w-40 h-40 mt-[-50px]">
-                    <img src={image4} alt="Café y Código de Neón" className="w-full h-full object-contain filter drop-shadow(0 0 10px hsl(var(--accent-2) / 0.3))" />
-                    <div className="absolute inset-0 bg-background/50 rounded-full filter blur-[10px]"></div>
+                {/* Monitor flotante */}
+                <div className="liquid-glass-strong rounded-2xl p-2 w-48 h-48 md:w-56 md:h-56">
+                    <img src={image4} alt="Café y Código de Neón" className="w-full h-full object-cover rounded-xl" style={{ filter: 'drop-shadow(0 0 15px hsl(188 85% 53% / 0.3))' }} />
                 </div>
             </motion.div>
 

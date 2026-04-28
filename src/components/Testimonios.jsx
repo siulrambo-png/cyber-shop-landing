@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import image0 from '../assets/image_0.png' // Hacker con máscara — Ciberdefensor Anónimo
 import image3 from '../assets/image_3.jpg' // Hacker Anonymous en estudio
 
 const staggerContainer = {
@@ -14,7 +15,7 @@ const staggerItem = {
 export default function Testimonios() {
   const testimonials = [
     {
-      photo: image3, // Usando la imagen proporcionada
+      photo: image0, // Hacker con máscara como avatar
       quote: "La defensa de security-dex es impecable. Su sistema de neón no solo es visualmente impresionante, sino que neutraliza amenazas en tiempo real antes de que se conviertan en problemas. ¡Totalmente recomendado!",
       name: "Ciberdefensor Anónimo",
       rol: "Analista de Seguridad",
@@ -58,7 +59,7 @@ export default function Testimonios() {
                 {testimonials.map((t, i) => (
                     <motion.div key={i} variants={staggerItem} className="liquid-glass rounded-2xl p-8 group flex flex-col gap-6 relative overflow-hidden">
                         {/* Foto con acento de neón */}
-                        <div className={`relative w-20 h-20 rounded-full border-2 ${t.accent === 'principal' ? 'border-accent' : t.accent === 'secundario' ? 'border-accent-2' : 'border-foreground/15'} overflow-hidden group-hover:scale-105 group-hover:rotate-3 transition-all`} style={{ filter: `drop-shadow(0 0 10px ${t.accent === 'principal' ? 'hsl(var(--accent))' : t.accent === 'secundario' ? 'hsl(var(--accent-2))' : 'hsl(var(--foreground)/0.1)'})` }}>
+                        <div className={`relative w-20 h-20 rounded-full border-2 ${t.accent === 'principal' ? 'border-accent neon-ring-purple' : t.accent === 'secundario' ? 'border-accent-2 neon-ring-cyan' : 'border-foreground/15'} overflow-hidden group-hover:scale-110 group-hover:rotate-3 transition-all`}>
                             <img src={t.photo} alt={t.name} className="w-full h-full object-cover" />
                         </div>
                         {/* Línea de acento */}

@@ -46,10 +46,8 @@ export default function CtaFinalFooter() {
             </motion.div>
 
             {/* Candado de neón púrpura grande de image_5.png recreado - Lado Derecho */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} transition={{ delay: 0.3 }} className="relative text-accent justify-self-center md:justify-self-end">
-                <div className="filter blur-[10px]" style={{ filter: 'drop-shadow(0 0 10px hsl(var(--accent))) drop-shadow(0 0 20px hsl(var(--accent)))' }}>
-                    <Lock className="w-80 h-80" strokeWidth={0.5} />
-                </div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp} transition={{ delay: 0.3 }} className="relative text-accent justify-self-center md:justify-self-end animate-neon-pulse">
+                <Lock className="w-64 h-64 md:w-80 md:h-80" strokeWidth={1} />
             </motion.div>
         </div>
 

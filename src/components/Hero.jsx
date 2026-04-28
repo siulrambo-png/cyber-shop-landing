@@ -21,10 +21,11 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen relative flex flex-col justify-center items-center text-center overflow-hidden py-24 md:py-32">
-      {/* Candado de neón púrpura grande de image_5.png recreado con CSS */}
-      <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full filter blur-[120px] opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)' }}></div>
-      <div className="absolute top-[25%] left-1/2 -translate-x-1/2 z-0 scale-[1.3] filter blur-[6px] pointer-events-none text-accent">
-          <Lock className="w-80 h-80" strokeWidth={0.5} style={{ filter: 'drop-shadow(0 0 10px hsl(var(--accent))) drop-shadow(0 0 20px hsl(var(--accent))) drop-shadow(0 0 30px hsl(var(--accent) / 0.5))' }} />
+      {/* Resplandor de fondo neón */}
+      <div className="absolute top-[18%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[550px] md:h-[550px] rounded-full filter blur-[150px] opacity-25 pointer-events-none" style={{ background: 'radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)' }}></div>
+      {/* Candado neón nítido con outer-glow */}
+      <div className="absolute top-[22%] left-1/2 -translate-x-1/2 z-0 pointer-events-none text-accent animate-neon-pulse">
+          <Lock className="w-72 h-72 md:w-80 md:h-80" strokeWidth={1} />
       </div>
 
       <div className="relative z-10 max-w-4xl px-6">
@@ -35,7 +36,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Heading */}
-        <h1 className="font-heading text-[clamp(4.5rem,10vw,8rem)] leading-[0.92] tracking-[0.02em] font-bold text-foreground">
+        <h1 className="font-heading text-[clamp(3rem,8vw,7rem)] leading-[0.94] tracking-[-0.02em] font-bold text-foreground">
           {headingLines.map((line, i) => (
             <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={lineVariants} className="block">
               {line}

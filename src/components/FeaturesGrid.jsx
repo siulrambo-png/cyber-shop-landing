@@ -50,7 +50,7 @@ export default function FeaturesGrid() {
                     return (
                         <motion.div key={i} variants={staggerItem} className="liquid-glass rounded-2xl p-6 md:p-8 flex flex-col items-center text-center group">
                             {/* Icono de neón púrpura recreado */}
-                            <div className="liquid-glass-strong rounded-full w-14 h-14 flex items-center justify-center text-accent ring-accent/30 ring-1 group-hover:text-foreground group-hover:bg-accent group-hover:ring-accent transition-all hover:scale-105" style={{ filter: 'drop-shadow(0 0 10px hsl(var(--accent)))' }}>
+                            <div className="liquid-glass-strong rounded-full w-14 h-14 flex items-center justify-center text-accent ring-accent/40 ring-1 group-hover:text-foreground group-hover:bg-accent group-hover:ring-accent transition-all hover:scale-110 animate-neon-pulse">
                                 <IconComponent className="w-7 h-7" strokeWidth={1} />
                             </div>
                             <h3 className="font-heading mt-6 mb-3 text-lg font-semibold tracking-wide text-foreground">{feature.title}</h3>

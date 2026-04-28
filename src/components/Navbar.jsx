@@ -14,10 +14,10 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16 py-3 flex justify-between items-center"
+      className="fixed top-4 left-4 right-4 z-50 px-8 lg:px-12 py-3 flex justify-between items-center liquid-glass rounded-full"
     >
       {/* Logotipo */}
-      <a href="/" className="font-heading text-2xl font-bold text-accent">
+      <a href="/" className="font-heading text-2xl font-bold text-accent" style={{ filter: 'drop-shadow(0 0 8px hsl(271 91% 65% / 0.5))' }}>
         dex
       </a>
 
