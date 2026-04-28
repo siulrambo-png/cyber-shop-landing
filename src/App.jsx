@@ -10,7 +10,7 @@ export default function App() {
     <div className="bg-background min-h-screen text-foreground overflow-hidden">
       <div className="relative z-10">
         <Navbar />
-        <main>
+        <main className="space-y-0">
           <Hero />
           <FeaturesGrid />
           <ComoFunciona />
