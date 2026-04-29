@@ -19,9 +19,9 @@ export default function CtaFinalFooter() {
             {/* Texto y Formulario */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp}>
                 <span className="font-body font-semibold text-[0.65rem] tracking-[0.25em] uppercase mb-6 relative z-10 inline-block text-accent">Acceso Exclusivo</span>
-                <h2 className="font-heading text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.90] max-w-xl mx-auto md:mx-0 font-bold tracking-[-0.03em]" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                <h2 className="font-heading text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[0.90] max-w-xl mx-auto md:mx-0 font-bold tracking-[-0.03em]">
                     {headingLines.map((line, i) => (
-                        <span key={i} className="block">{line}</span>
+                        <span key={i} className="block" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{line}</span>
                     ))}
                 </h2>
                 <p className="font-body font-light text-base text-foreground/45 max-w-sm mx-auto md:mx-0 mt-6 mb-12 leading-relaxed">Completa el formulario para una consulta personalizada de seguridad con nuestro equipo de expertos dex y descubre cómo podemos blindar tu mundo digital.</p>

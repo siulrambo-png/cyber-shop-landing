@@ -37,9 +37,9 @@ export default function Hero() {
         </motion.div>
 
         {/* Heading — gradiente blanco→plata, tamaño responsive */}
-        <h1 className="font-heading text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.92] tracking-[-0.03em] font-bold" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+        <h1 className="font-heading text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.92] tracking-[-0.03em] font-bold">
           {headingLines.map((line, i) => (
-            <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={lineVariants} className="block">
+            <motion.span key={i} custom={i} initial="hidden" animate="visible" variants={lineVariants} className="block" style={{ background: 'linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {line}
             </motion.span>
           ))}
